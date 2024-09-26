@@ -2,11 +2,11 @@ const db = require('../config/bdConfig.js');
 
 
 const createFavoritoHotel = (req, res) => {
-  const { ID_Usuario, ID_Hotel } = req.body;
-  const query = 'INSERT INTO favoritos_hoteles (ID_Usuario, ID_Hotel) VALUES (?, ?)';
-  db.query(query, [ID_Usuario, ID_Hotel], (err, results) => {
+  const { ID_Usuario, ID_Hotel,hotel_Nombre,dia_chequeo,dia_idaHotel } = req.body;
+  const query = 'INSERT INTO favoritos_hoteles (ID_Usuario, ID_Hotel,hotel_Nombre, dia_chequeo, dia_idaHotel) VALUES (?, ?, ?, ?, ?)';
+  db.query(query, [ID_Usuario, ID_Hotel,hotel_Nombre,dia_chequeo,dia_idaHotel], (err, results) => {
     if (err) return res.status(500).send('Error en la base de datos');
-    res.status(201).json({ id: results.insertId, ID_Usuario, ID_Hotel });
+    res.status(201).json({ id: results.insertId, ID_Usuario, ID_Hotel,hotel_Nombre,dia_chequeo,dia_idaHotel });
   });
 };
 
