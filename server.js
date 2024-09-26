@@ -9,19 +9,15 @@ app.use(cors());
 app.use(express.json());
 
 // Importar rutas
-const actividadRoutes = require('./routes/actividadRoutes');
 const favoritosActividadesRoutes = require('./routes/favoritosActividadesRoutes');
 const favoritosHotelesRoutes = require('./routes/favoritosHotelesRoutes');
-const hotelRoutes = require('./routes/hotelRoutes');
 const reservaRoutes = require('./routes/reservaRoutes');
 const usuarioRoutes = require('./routes/usuarioRoutes');
 const authRoutes = require('./routes/authRoutes');
 
-// Usar rutas
-app.use('/api/actividad', actividadRoutes);
+// Usar rutas;
 app.use('/api/favoritos_actividades', favoritosActividadesRoutes);
 app.use('/api/favoritos_hoteles', favoritosHotelesRoutes);
-app.use('/api/hotel', hotelRoutes);
 app.use('/api/reserva', reservaRoutes);
 app.use('/api/usuario', usuarioRoutes);
 app.use('/api/auth', authRoutes);
